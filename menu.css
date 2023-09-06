@@ -1,0 +1,262 @@
+.menuBox{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--menuBoxWhite);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: .5s ease-in-out;
+    left: -100%;
+    z-index: 20;
+}
+.menuBox.is-active{
+    left: 0;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 50px;
+    background-color: var(--menuBoxGray);
+    border-radius: 10px;
+}
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profileImg img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.name{
+    text-align: center;
+    margin: 3% 0 8% 0;
+}
+.name p{
+    font-size: var(--px22);
+}
+.bioStatus{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.bioStatus p{
+    font-size: var(--px16);
+    text-align: center;
+}
+.mainBox ul li{
+    list-style: none;
+}
+.navMenu{
+    width: 70%;
+    height: 30%;
+    padding: 20px 0 20px 20px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--menuBoxGray) 70%, rgba(250, 250, 250, 0) 100%);
+}
+.navMenu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.navMenu ul li a{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--px18);
+    padding: 10px 15px;
+}
+.navMenu ul li a span{
+    margin-right: 5px;
+}
+.downMenu{
+    width: 70%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--menuBoxGray);
+    border-radius: 20px;
+}
+.downMenu a{
+    text-decoration: none;
+    color: var(--black);
+}
+.downMenu a span{
+    font-size: var(--px24);
+}
+.downMenu p{
+    display: flex;
+    align-items: center;
+    font-size: var(--px14);
+}
+.downMenu p span{
+    margin-right: 5px;
+    font-size: var(--px18);
+}
+.downMenu #ig{
+    margin: 5px 0 0 10px;
+    font-size: var(--px16);
+    transition: .3s;
+}
+.downMenu #ig:hover{
+    fill: #833AB4;
+}
+.scroll span{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--px26);
+}
+#menuOpen{
+   position: absolute;
+   left: 1%;
+   top: 50%;
+   font-size: var(--px26);
+   text-decoration: none;
+   color: var(--black);
+   transition: .3s cubic-bezier(0.48, 0.03, 0.37, 0.96);
+}
+#menuOpen.is-active{
+    opacity: 0;
+}
+.profileInfo .name #nickname2{
+    font-size: var(--px14);
+    text-align: center;
+    margin-bottom: 5px;
+}
+.navMenu ul li a:before{
+    content: "";
+    bottom: 1%;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(230, 230, 230, 0.8) 0%, var(--menuBoxWhite) 90%);
+    transition: transform .3s ease-in;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    border-radius: 10px;
+    z-index: -10;
+}
+.navMenu ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.navMenu ul li a .arrow{
+    position: relative;
+    font-size: var(--px20);
+    left: 10%;
+    opacity: 0;
+    color: var(--black);
+}
+.navMenu ul li a.is-active .arrow{
+    animation: arrow 1s forwards;
+}
+@keyframes arrow{
+    0%{
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(150%);
+    }
+}
+
+/*NOTIFICATIONS*/
+.notifications #bell{
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 30px;
+    transition: .3s;
+    padding: 5px;
+    border-radius: 50%;
+}
+.notifications #bell:hover{
+    background: rgb(50, 50, 50)
+}
+.notificationMenu{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background: var(--white);
+    right: -100%;
+    border-radius: 20px;
+    z-index: 10;
+    transition: .5s ease-in-out;
+}
+.notificationMenu.is-active{
+    right: 0%;
+}
+#notificationArrow{
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    cursor: pointer;
+    color: var(--black);
+    font-size: var(--px26);
+    z-index: 10;
+}
+.notificationsBoxes{
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 50px 25px 25px 60px;
+    gap: 10px;
+}
+.notification{
+    background: var(--menuBoxGray);
+    padding: 20px;
+    width: 90%;
+    height: 25%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    justify-content: space-between;
+    transition: .3s;
+}
+.notification:hover{
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+.notification .notificationTitle{
+    font-weight: 600;
+}
+.timeAgo{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+}
+.downMenu a span{
+    padding: 5px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.downMenu a span:hover{
+    background: rgb(230, 230, 230);
+}
+

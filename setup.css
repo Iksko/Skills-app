@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+:root{
+    --white: rgba(255, 255, 255, 1);
+    --black: rgb(25, 25, 25);
+    --menuBoxWhite: rgba(250, 250, 250, 1);
+    --menuBoxGray: rgba(230, 230, 230, 0.4);
+    --backgroundLight: rgba(240, 240, 240, 0.4);
+    --backgroundBox: rgba(255, 255, 255, 0.3);
+    --settingsWhite: rgba(255, 255, 255, 0.7);
+    --px14: 14px;
+    --px16: 16px;
+    --px18: 18px;
+    --px20: 20px;
+    --px22: 22px;
+    --px24: 24px;
+    --px26: 26px;
+    --low: #26a641;
+    --medium: #006d32;
+    --high: #0e4429;
+    --yellow: #ca6f00;
+    --green: #007d04;
+    --red: #a10000;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/background-4.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainBox{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 80%;
+    background-color: var(--backgroundBox);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    --webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+}

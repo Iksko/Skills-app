@@ -1,0 +1,239 @@
+@import url(setup.css);
+@import url(menu.css);
+
+.section-1{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-2{
+    width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 85%;
+    align-self: center;
+}
+.faq{
+    width: 80%;
+    height: 85%;
+    background: var(--backgroundLight);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.faq::-webkit-scrollbar{
+    width: 0px;
+}
+.question{
+    width: 100%;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 2%;
+    z-index: 1;
+}
+.question .upper-part{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.faq .answer{
+    width: 100%;
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    padding: 20px 30px;
+    display: none;
+    /* visibility: hidden; */
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    margin-bottom: 5%;
+    transition: .5s;
+}
+.faq .question.is-active{
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+}
+.faq .answer.is-active{
+    /* visibility: visible; */
+    display: flex;
+    animation: answer .5s forwards;
+}
+@keyframes answer {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.question span{
+    transition: transform 0.3s ease;
+    font-size: var(--px18);
+}
+.question span.is-active{
+    transform: rotate(90deg);
+}
+.faq .title{
+    font-size: var(--px26);
+    margin-bottom: 5%;
+    font-weight: 500;
+}
+.faq .question p{
+    font-weight: 500;
+}
+.question:nth-child(odd){
+    margin-bottom: 10%;
+}
+.helpForm{
+    height: 65%;
+    width: 80%;
+    background: var(--backgroundLight);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+.helpForm .hFormTitle{
+    font-weight: 500;
+    font-size: var(--px20);
+}
+.helpForm form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 90%;
+    justify-content: space-around;
+}
+.helpForm form input{
+    height: 15%;
+    background: var(--settingsWhite);
+    border-radius: 10px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+.helpForm form textarea{
+    resize: none;
+    background: var(--settingsWhite);
+    border-radius: 10px;
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    height: 40%;
+}
+.helpForm form .iPhoto{
+    height: 50px;
+    border-radius: 10px;
+    background: var(--settingsWhite);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.helpForm form .iPhoto p{
+    font-size: 14px;
+    color: rgb(130, 130, 130);
+}
+.helpForm form .iPhoto span{
+    color: var(--black);
+    padding: 5px;
+    border-radius: 50%;
+    transition: .3s ease-in-out;
+}
+.helpForm form .iPhoto span:hover{
+    color: var(--white);
+    background: var(--black);
+}
+.helpForm form a{
+    width: 100%;
+    padding: 15px 25px;
+    background: var(--settingsWhite);
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: var(--px16);
+    font-weight: 500;
+    position: relative;
+    transition: .2s;
+    z-index: 10;
+}
+.helpForm form a::before{
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    background: var(--black);
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    border-radius: 10px;
+    transition: transform .3s ease-in;
+    z-index: -1;
+}
+.helpForm form a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.helpForm form a:hover{
+    color: var(--white);
+}
+.contact{
+    width: 80%;
+    height: 30%;
+    background: var(--backgroundLight);
+    border-radius: 10px;
+    padding: 20px 25px;
+}
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.contactTitle{
+    font-weight: 500;
+    font-size: var(--px20);
+}
+.info p{
+    font-size: 14px;
+}
+.info span{
+    margin-right: 10px;
+    color: var(--black);
+    font-size: var(--px24);
+}

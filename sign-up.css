@@ -1,0 +1,33 @@
+@import url(log-in.css);
+
+.login{
+    height: 80%;
+}
+.loginForm{
+    height: 80%;
+}
+.loginForm form .name{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.loginForm .address{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.loginForm .address #postCode{
+    width: 45%;
+}
+.login form .name input, .loginForm .address input{
+    height: 110%;
+    padding: 15px 25px;
+}
+.accLogin p{
+    font-size: 14px;
+}
+.accLogin p a{
+    color: #00b4cc;
+}
